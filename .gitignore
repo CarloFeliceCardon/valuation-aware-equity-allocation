@@ -1,0 +1,10 @@
+.venv/
+.venv313/
+__pycache__/
+*.pyc
+
+data/*.csv
+outputs/*.csv
+outputs/*.png
+
+.DS_Store
