@@ -32,23 +32,13 @@ The usable valuation sample runs from January 2000 to September 2023.
 
 Each month, the model estimates the following regression using only information that would have been available at that point in time:
 
-\[
-R^{SPY}_{t \rightarrow t+12}
-=
-\alpha
-+
-\beta_1 \left(\frac{1}{CAPE_t}\right)
-+
-\beta_2 y^{10Y}_t
-+
-\varepsilon_t
-\]
+$$R^{\mathrm{SPY}}_{t \rightarrow t+12} = \alpha + \beta_1 \left(\frac{1}{\mathrm{CAPE}_t}\right) + \beta_2 y^{10Y}_t + \varepsilon_t$$
 
 where:
 
-- \(R^{SPY}_{t \rightarrow t+12}\) is the SPY total return over the following 12 months;
-- \(1/CAPE_t\) is the CAPE earnings yield;
-- \(y^{10Y}_t\) is the US 10-year Treasury yield.
+- $R^{\mathrm{SPY}}_{t \rightarrow t+12}$ is the SPY total return over the following 12 months;
+- $\frac{1}{\mathrm{CAPE}_t}$ is the CAPE earnings yield;
+- $y^{10Y}_t$ is the US 10-year Treasury yield.
 
 The model is re-estimated every month using an expanding window. To avoid look-ahead bias, a 12-month return observation enters the training set only after its full return horizon has elapsed.
 
@@ -58,18 +48,9 @@ The predicted 12-month SPY return is compared with the current 3-month Treasury 
 
 The baseline gradual allocation rule is:
 
-\[
-w_t =
-\min\left(
-1,
-\max\left(
-0,
-\frac{\widehat{R}^{SPY}_{t \rightarrow t+12} - y^{cash}_t}{5\%}
-\right)
-\right)
-\]
+$$w_t = \min\left(1,\max\left(0,\frac{\widehat{R}^{\mathrm{SPY}}_{t \rightarrow t+12} - y^{\mathrm{cash}}_t}{5\%}\right)\right)$$
 
-where \(w_t\) is the SPY weight for the following month.
+where $w_t$ is the SPY weight for the following month.
 
 - An expected excess return of 0% implies a 0% allocation to SPY.
 - An expected excess return of 2.5% implies a 50% allocation.
