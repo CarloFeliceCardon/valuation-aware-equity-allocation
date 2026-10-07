@@ -70,9 +70,17 @@ The expanding-window backtest runs from March 2011 to September 2023.
 | Static benchmark with same average SPY weight | 9.66% | 11.46% | 0.78 | -19.04% |
 | SPY buy-and-hold | 11.82% | 14.47% | 0.78 | -23.93% |
 
+### Equity curve
+
+![Out-of-sample equity curve](assets/equity_curve.png)
+
 The strategy held an average SPY weight of 79.2%.
 
 The result suggests that the timing signal added value relative to a static portfolio with the same average equity exposure. It did not outperform 100% SPY in total return, but it achieved a higher Sharpe ratio and a smaller maximum drawdown.
+
+### Dynamic allocation
+
+![Dynamic SPY allocation](assets/equity_exposure.png)
 
 ### Robustness checks
 
